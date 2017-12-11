@@ -18,8 +18,16 @@ int main()
         cin >> opponentX >> opponentY; cin.ignore();
 
         int thrust = 100;
-        if (nextCheckpointAngle > 90 || nextCheckpointAngle < -90) {
+        if (abs(nextCheckpointAngle) >= 90 || nextCheckpointDist < 100) {
             thrust = 0;
+        }else if (abs(nextCheckpointAngle) < 90 && abs(nextCheckpointAngle) >= 75) {
+            thrust = 20;
+        } else if (abs(nextCheckpointAngle) < 75 && abs(nextCheckpointAngle) >= 60) {
+            thrust = 40;
+        } else if (abs(nextCheckpointAngle) < 60 && abs(nextCheckpointAngle) >= 45) {
+            thrust = 60;
+        } else if (abs(nextCheckpointAngle) < 45 && abs(nextCheckpointAngle) >= 30) {
+            thrust = 80;
         }
 
         cout << nextCheckpointX << " " << nextCheckpointY << " " << thrust << endl;
