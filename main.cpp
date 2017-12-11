@@ -18,7 +18,7 @@ int main()
         cin >> opponentX >> opponentY; cin.ignore();
 
         int thrust = 100;
-        if (abs(nextCheckpointAngle) >= 90 || nextCheckpointDist < 100) {
+        if (abs(nextCheckpointAngle) >= 90) {
             thrust = 0;
         }else if (abs(nextCheckpointAngle) < 90 && abs(nextCheckpointAngle) >= 75) {
             thrust = 20;
